@@ -18,28 +18,28 @@ namespace u19012285_HW03.Controllers
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Index(HttpPostedFileBase file, FormCollection collections)
+        public ActionResult Aboutme()
         {
-            string SelectedFile = Convert.ToString(collections["FileOption"]);
 
-            if(SelectedFile == "Document")
-            {
-                file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Documents/ "), file.FileName));
-            }
-            else if (SelectedFile == "Image")
-            {
-                file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/ "), file.FileName));
-            }
-            else
-            {
-                file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Videos/ "), file.FileName));
-            }
-
-            return RedirectToAction("Index");
+            return View();
         }
 
+        [HttpPost]
+
+        public ActionResult Video()
+        {
+            List<FileModel> UploadedVideos = new List<FileModel>();
+            string[] Videos = Directory.GetFiles(Server.MapPath("~/Videos/ "));
+            foreach (var videos in Videos)
+            {
+                FileModel RetrieveVideo = new FileModel();
+                RetrieveVideo.FileName = Path.GetFileName(videos);
+                RetrieveVideo.FileType = "Video";
+                UploadedVideos.Add(RetrieveVideo);
+            }
+            return View(UploadedVideos);
+
+        }
         public ActionResult File()
         {
             List<FileModel> UploadedFiles = new List<FileModel>();
@@ -83,23 +83,12 @@ namespace u19012285_HW03.Controllers
                 RetrieveImage.FileType = "Image";
                 UploadedImages.Add(RetrieveImage);
             }
+
             return View(UploadedImages);
+
+            //Image post action
         }
 
-        public ActionResult Video()
-        {
-            List<FileModel> UploadedVideos = new List<FileModel>();
-            string[] Videos = Directory.GetFiles(Server.MapPath("~/Videos/ "));
-            foreach (var videos in Videos)
-            {
-                FileModel RetrieveVideo = new FileModel();
-                RetrieveVideo.FileName = Path.GetFileName(videos);
-                RetrieveVideo.FileType = "Video";
-                UploadedVideos.Add(RetrieveVideo);
-            }
-            return View(UploadedVideos);
-
-        }
 
         //public FileResult DownloadUploadedFile(string FileName, string FileType)
         //{
@@ -159,13 +148,28 @@ namespace u19012285_HW03.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Aboutme()
+        public ActionResult Index(HttpPostedFileBase file, FormCollection collections)
         {
-            
-            return View();
+            string SelectedFile = Convert.ToString(collections["FileOption"]);
+
+            if (SelectedFile == "Document")
+            {
+                file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Documents/ "), file.FileName));
+            }
+            else if (SelectedFile == "Image")
+            {
+                file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/ "), file.FileName));
+            }
+            else
+            {
+                file.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Videos/ "), file.FileName));
+            }
+
+            return RedirectToAction("Index");
         }
 
-        //Image post action
+
+       
         
        
 
