@@ -1,0 +1,31 @@
+﻿@model List<u19012285_HW03.Models.FileModel>
+@{
+    ViewBag.Title = "File";
+}
+
+<h2>Document Files</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead class="thead-dark" style="background-color: black; color:white";>
+                    <tr>
+                        <th>File Name</th>
+                        <th>DOWNLOAD OPTION</th>
+                        <th>DELETE OPTION </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var myfile in Model){ 
+                        <tr>
+                            <td>@myfile.FileName</td>
+                            <td><button class="btn btn-success" onclick="window.location.href='@Url.Action("DownloadUploadedFile", "Home", new {FN = myfile.FileName  })'">Download</button></td>
+                            <td><button class="btn btn-danger" onclick="window.location.href='@Url.Action("DeletUploadedFile", "Home", new {FN = myfile.FileName })'">Delete</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

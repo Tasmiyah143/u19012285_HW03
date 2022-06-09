@@ -1,31 +1,148 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
 }
 
+<h1 class="MainHeading">Tasmiyah's Homework 3 Assignment</h1>
+<h4 class="SubHeading">
+    This assignment is done using: HTML, CSS, JavaScript,
+    and Responsive web design WITHIN and
+    MVC project (C#)
+</h4>
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <style>
+        .file-upload {
+            display: inline-flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-upload-label {
+            padding-left: 2px;
+            max-width: 250px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .Submit {
+            padding: 3px 3px;
+        }
+
+        .homepagecontent {
+            display: inline-flex;
+        }
+
+            .homepagecontent .hpc1 .lead {
+                text-align: justify;
+                padding-right: 10px;
+                font-size: 16px;
+            }
+
+        .MainHeading {
+            padding-bottom: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+        }
+
+        .SubHeading {
+            padding-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+        }
+
+        .hpc2 {
+            text-align: justify;
+            padding-right: 10px;
+            font-size: 16px;
+        }
+
+        .Home{
+            display:flex;
+        }
+    </style>
+    <div class="Home">
+        <div class="homepagecontent">
+            <div class="col-lg-11">
+                <div class="hpc1">
+                    <h3>Description</h3>
+                    <p class="lead">
+                        This program contains 5 pages. The home page, file page, image page, video page, and about me page.
+                        The home page contains a description of what the program does, as well as a form that contains 3 radio buttons for
+                        a file, image or video upload. The file page contains a list of files that have been uploaded through the home page
+                        in a table format and allows you to download or delete the files that exist. The image page contains a list of images
+                        that have been uploaded through the home page and allows you to download or delete the existing images. The video page
+                        contains a list of videos that have been uploaded through the home page and allows you to download or delete the exitsing
+                        videos. The about me page contains a biography of myself, as well as a picture.
+                    </p>
+                    <p class="lead">
+
+                    </p>
+                </div>
+            </div>
+    
+
+ 
+
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="Home">
+
+                <div class="col-lg-8">
+                    <h3>Option Selection</h3>
+                    <div>
+                        <div class="radio">
+                            <label><input type="radio" name="FileOption" value="Document" />Document</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="FileOption" value="Image" />Image</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="FileOption" value="Video" />Video</label>
+                        </div>
+                    </div>
+                    <input type="file" class="form-control" name="file" />
+                    <br />
+                    <button class="btn btn-success" type="submit">Submit</button>
+                    <!--form action="/action_page.php" method="post">
+        <label for="document">Document</label>
+        <input type="radio" id="document" name="FileOption" value="document">
+        <br>
+        <label for="image">Image</label>
+        <input type="radio" id="image" name="FileOption" value="image">
+        <br>
+        <label for="video">Video</label>
+        <input type="radio" id="video" name="FileOption" value="video">
+        <br><br>
+        <div class="file-upload">
+            <div class="file-input">
+                <input class="file-upload-input" type="file" id="myfile[]" name="myfile" multiple />
+            </div>
+            <!----input class="file-upload-input" type="file"  id="myfile[]" name="myfile" multiple /-->
+                    <!--button class="file-upload-button" type="button">Browse...</!--button>
+                <span class="file-upload-label"></span>
+            </div>
+            <br><br>
+            <input class="Submit" type="submit" value="Submit">
+        </!--form-->
+                </div>
+            </div>
+        }
+  
+    </div>
+    </div>
+
+
+
+
+
+
+
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>

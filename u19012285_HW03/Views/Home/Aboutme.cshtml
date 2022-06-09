@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Aboutme";
+}
+
+<div>
+    <h1 class="H1">About me</h1>
+    <h4 class="H4">This page contains my biography</h4>
+    <style>
+        .H1 {
+            padding-bottom: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+        }
+
+        .H4 {
+            padding-bottom: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+        }
+
+        .AboutContent {
+            display: flex;
+        }
+
+            .AboutContent .ac1 {
+            text-align: justify;
+            padding-right: 30px;
+            font-size: 10px;
+        }
+
+            .AboutContent .ac1 .paragraph{
+                font-size: 16px;
+            }
+
+            .Image{
+                width: 4000px;
+                border: none;
+            }
+        
+    </style>
+</div>
+
+<div class="jumbotron">
+    <section class="AboutContent">
+        <section class="ac1">
+            <h3>Bio</h3>
+            <div>
+                <p class="paragraph">
+                    My name is Tasmiyah Amod. I am 21 years old. I am currenntly studying BIT Information Systems at the University of Pretoria.
+                    A degree in technology has always been a dream and finally I am almost at the end of the journey and I am very much excited to be 
+                    apart of the 2023 graduate class.  
+                </p>
+                <p class="paragraph">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+                    commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                    consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                </p>
+            </div>
+
+         </section>
+        <section class="ac2">
+            <h3>Tasmiyah Amod</h3>
+            <div class="thumbnail">
+                <img class="Image" src="~/Aboutme/Aboutme/me.jpg"/>
+            </div>
+        </section>
+     </section>
+    </div>
+
+

@@ -1,0 +1,26 @@
+﻿@model List<u19012285_HW03.Models.FileModel>
+@{
+    ViewBag.Title = "Video";
+}
+
+<h2>Video Files</h2>
+<div class="container-fluid">
+    <div class="row Videos">
+        @foreach (var file in Model)
+            {
+                <div class="col-lg-4">
+                    <div class="card" style="width: 16rem";>
+                        <a href="@Url.Content("~/Videos/" + file.FileName)">
+                            <video class="card-video" height="300" width="400" src="~/Videos/@file.FileName" ></video>
+                        </a>
+                        <div class="card-body">
+                            <h4>@file.FileName</h4>
+                            <button class="btn btn-success">Download</button>
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            }
+    </div>
+</div>
+

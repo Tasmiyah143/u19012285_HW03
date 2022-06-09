@@ -5052,8 +5052,8 @@ a.badge:focus {
 }
 .container .jumbotron,
 .container-fluid .jumbotron {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
   border-radius: 6px;
 }
 .jumbotron .container {
@@ -6830,5 +6830,6 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+
 }
 /*# sourceMappingURL=bootstrap.css.map */
